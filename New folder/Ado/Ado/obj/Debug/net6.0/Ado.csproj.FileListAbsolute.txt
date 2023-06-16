@@ -20,3 +20,25 @@ C:\Users\ulvisk\source\repos\Ado\Ado\obj\Debug\net6.0\refint\Ado.dll
 C:\Users\ulvisk\source\repos\Ado\Ado\obj\Debug\net6.0\Ado.pdb
 C:\Users\ulvisk\source\repos\Ado\Ado\obj\Debug\net6.0\Ado.genruntimeconfig.cache
 C:\Users\ulvisk\source\repos\Ado\Ado\obj\Debug\net6.0\ref\Ado.dll
+C:\Users\ulvisk\Desktop\Ado.net\New folder\Ado\Ado\bin\Debug\net6.0\Ado.exe
+C:\Users\ulvisk\Desktop\Ado.net\New folder\Ado\Ado\bin\Debug\net6.0\Ado.deps.json
+C:\Users\ulvisk\Desktop\Ado.net\New folder\Ado\Ado\bin\Debug\net6.0\Ado.runtimeconfig.json
+C:\Users\ulvisk\Desktop\Ado.net\New folder\Ado\Ado\bin\Debug\net6.0\Ado.dll
+C:\Users\ulvisk\Desktop\Ado.net\New folder\Ado\Ado\bin\Debug\net6.0\Ado.pdb
+C:\Users\ulvisk\Desktop\Ado.net\New folder\Ado\Ado\bin\Debug\net6.0\System.Data.SqlClient.dll
+C:\Users\ulvisk\Desktop\Ado.net\New folder\Ado\Ado\bin\Debug\net6.0\runtimes\win-arm64\native\sni.dll
+C:\Users\ulvisk\Desktop\Ado.net\New folder\Ado\Ado\bin\Debug\net6.0\runtimes\win-x64\native\sni.dll
+C:\Users\ulvisk\Desktop\Ado.net\New folder\Ado\Ado\bin\Debug\net6.0\runtimes\win-x86\native\sni.dll
+C:\Users\ulvisk\Desktop\Ado.net\New folder\Ado\Ado\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\ulvisk\Desktop\Ado.net\New folder\Ado\Ado\bin\Debug\net6.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\ulvisk\Desktop\Ado.net\New folder\Ado\Ado\obj\Debug\net6.0\Ado.csproj.AssemblyReference.cache
+C:\Users\ulvisk\Desktop\Ado.net\New folder\Ado\Ado\obj\Debug\net6.0\Ado.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ulvisk\Desktop\Ado.net\New folder\Ado\Ado\obj\Debug\net6.0\Ado.AssemblyInfoInputs.cache
+C:\Users\ulvisk\Desktop\Ado.net\New folder\Ado\Ado\obj\Debug\net6.0\Ado.AssemblyInfo.cs
+C:\Users\ulvisk\Desktop\Ado.net\New folder\Ado\Ado\obj\Debug\net6.0\Ado.csproj.CoreCompileInputs.cache
+C:\Users\ulvisk\Desktop\Ado.net\New folder\Ado\Ado\obj\Debug\net6.0\Ado.csproj.CopyComplete
+C:\Users\ulvisk\Desktop\Ado.net\New folder\Ado\Ado\obj\Debug\net6.0\Ado.dll
+C:\Users\ulvisk\Desktop\Ado.net\New folder\Ado\Ado\obj\Debug\net6.0\refint\Ado.dll
+C:\Users\ulvisk\Desktop\Ado.net\New folder\Ado\Ado\obj\Debug\net6.0\Ado.pdb
+C:\Users\ulvisk\Desktop\Ado.net\New folder\Ado\Ado\obj\Debug\net6.0\Ado.genruntimeconfig.cache
+C:\Users\ulvisk\Desktop\Ado.net\New folder\Ado\Ado\obj\Debug\net6.0\ref\Ado.dll

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ulvisk\\source\\repos\\Ado\\Ado\\Ado.csproj": {}
+    "C:\\Users\\ulvisk\\Desktop\\Ado.net\\New folder\\Ado\\Ado\\Ado.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ulvisk\\source\\repos\\Ado\\Ado\\Ado.csproj": {
+    "C:\\Users\\ulvisk\\Desktop\\Ado.net\\New folder\\Ado\\Ado\\Ado.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ulvisk\\source\\repos\\Ado\\Ado\\Ado.csproj",
+        "projectUniqueName": "C:\\Users\\ulvisk\\Desktop\\Ado.net\\New folder\\Ado\\Ado\\Ado.csproj",
         "projectName": "Ado",
-        "projectPath": "C:\\Users\\ulvisk\\source\\repos\\Ado\\Ado\\Ado.csproj",
+        "projectPath": "C:\\Users\\ulvisk\\Desktop\\Ado.net\\New folder\\Ado\\Ado\\Ado.csproj",
         "packagesPath": "C:\\Users\\ulvisk\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ulvisk\\source\\repos\\Ado\\Ado\\obj\\",
+        "outputPath": "C:\\Users\\ulvisk\\Desktop\\Ado.net\\New folder\\Ado\\Ado\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ulvisk\\AppData\\Roaming\\NuGet\\NuGet.Config",
