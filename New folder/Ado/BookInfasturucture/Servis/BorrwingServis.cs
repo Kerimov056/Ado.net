@@ -30,7 +30,8 @@ public class BorrwingServis
                 {
                     while (reader.Read())
                     {
-                        Console.WriteLine($"ID: {reader[0]} BookID:{reader[1]} UserID: {reader[2]} BookName: {reader[3]} BookIsbn:{reader[4]} BorrowingDate: {reader[5]} ReturnDate: {reader[6]} UserName: {reader[6]}");
+                        Console.WriteLine($"ID: {reader[0]} \nBookID:{reader[1]} \nUserID: {reader[2]} \nBookName: {reader[3]} \nBookIsbn:{reader[4]} \nBorrowingDate: {reader[5]} \nReturnDate: {reader[6]} \nUserName: {reader[6]}");
+                        Console.WriteLine("----------------------------------------");  
                     }
                 }
                 else { Console.WriteLine("We don't have a Borrwing"); }
@@ -47,6 +48,7 @@ public class BorrwingServis
 
         string book_name = "";
         string book_isbn = "";
+        string user_name = "";
 
         foreach (var item in books)
         {
@@ -72,7 +74,6 @@ public class BorrwingServis
             return;
         }
 
-        string user_name = "";
         foreach (var item in users)
         {
             if (item.Id == userID)
@@ -80,7 +81,6 @@ public class BorrwingServis
                 user_name = item.Name;
             }
         }
-
         var query = $"INSERT INTO Borrowings values('{bookID}','{userID}','{book_name}','{book_isbn}','{boorowing_date}','{return_date}','{user_name}')";
         using (SqlConnection conn = new SqlConnection(coonection))
         {
@@ -97,6 +97,7 @@ public class BorrwingServis
             conn.Close();
         }
     }
+
     public void ISBNAdd()
     {
         var query = "SELECT * FROM Borrowings";
