@@ -30,7 +30,7 @@ public class BorrwingServis
                 {
                     while (reader.Read())
                     {
-                        Console.WriteLine($"ID: {reader[0]} \nBookID:{reader[1]} \nUserID: {reader[2]} \nBookName: {reader[3]} \nBookIsbn:{reader[4]} \nBorrowingDate: {reader[5]} \nReturnDate: {reader[6]} \nUserName: {reader[6]}");
+                        Console.WriteLine($"ID: {reader[0]} \nBookID:{reader[1]} \nUserID: {reader[2]} \nUserName: {reader[3]} \nBookName:{reader[4]} \nBookISBN: {reader[5]} \nBorriwingName: {reader[6]} \nReturnDate: {reader[6]}");
                         Console.WriteLine("----------------------------------------");  
                     }
                 }
@@ -55,6 +55,7 @@ public class BorrwingServis
             {
                 book_name = item.Name;
                 book_isbn = item.BookISBN;
+                break;
             }
         }
 
@@ -79,9 +80,10 @@ public class BorrwingServis
             if (item.Id == userID)
             {
                 user_name = item.Name;
+                break;
             }
         }
-        var query = $"INSERT INTO Borrowings values('{bookID}','{userID}','{book_name}','{book_isbn}','{boorowing_date}','{return_date}','{user_name}')";
+        var query = $"INSERT INTO Borrowings values('{bookID}','{userID}','{user_name}','{book_name}','{book_isbn}','{boorowing_date}','{return_date}')";
         using (SqlConnection conn = new SqlConnection(coonection))
         {
             try

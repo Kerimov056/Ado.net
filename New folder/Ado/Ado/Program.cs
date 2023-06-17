@@ -17,12 +17,20 @@ while (true)
 {
 	Console.WriteLine("-------------------------");
 	Console.WriteLine("0 -> Exit" +
+		"\n-----------------------" +
 		"\n1 -> Created Book" +
 		"\n2 -> List Book" +
-		"\n3 -> Created User" +
-		"\n4 -> List Users" +
-		"\n5 -> Created Borrwing" +
-		"\n6 -> List Borrwings");
+		"\n3 -> Delete Book" +
+		"\n4 -> Update Book" +
+		"\n5 -> Search By Name" +
+		"\n6 -> Seearch Book ISBN" +
+		"\n-----------------------" +
+		"\n7 -> Created User" +
+		"\n8 -> List Users" +
+        "\n-----------------------" +
+        "\n9 -> Created Borrwing" +
+		"\n10 -> List Borrwings" +
+		"\n11 -> Delete Borrwings");
 	Console.WriteLine("-------------------------");
 
 	string? answer = Console.ReadLine();
@@ -82,9 +90,30 @@ while (true)
 				Console.WriteLine("List Book:");
 				bookServis.GetAllBook();
 				break;
-			#endregion
-			#region Created User
-			case (int)Menu.CreatedUser:
+            #endregion
+            #region Delete Book
+            case (int)Menu.DeleteBook:
+                Console.WriteLine("Which book do you want to delete?");
+                bookServis.GetAllBook();
+                string? BookName = Console.ReadLine();
+                if (String.IsNullOrWhiteSpace(BookName))
+                {
+                    Console.WriteLine("Enter a Correct name");
+                    goto case (int)Menu.DeleteBook;
+                }
+                try
+                {
+                    bookServis.DeleteRowBook(BookName);
+                    Console.WriteLine("Succesfully created");
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+                break;
+            #endregion
+            #region Created User
+            case (int)Menu.CreatedUser:
 				Console.WriteLine("Enter User Name:");
 				string? user_name = Console.ReadLine();
 				if (String.IsNullOrWhiteSpace(user_name))
@@ -191,6 +220,8 @@ while (true)
 				borrwingServis.GetBorrowings();
 				break;
             #endregion
+			
+
             default:
 				Console.WriteLine("Select coreet ones from menu:");
 				break;

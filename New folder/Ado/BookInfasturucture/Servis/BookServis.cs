@@ -1,4 +1,6 @@
-﻿using System.Data.SqlClient;
+﻿using BookInfasturucture.Servis;
+using BookInfasturucture.Utuilist.Helper;
+using System.Data.SqlClient;
 using TabloCore.Entity;
 
 namespace BookInfasturucture.Servis;
@@ -157,6 +159,7 @@ public class BookServis
         }
     }
 
+    //----------------------------------------------------
     public void BookNameAdd()
     {
         var query = "SELECT * FROM Books";
@@ -187,3 +190,5 @@ public class BookServis
         }
     }
 }
+
+

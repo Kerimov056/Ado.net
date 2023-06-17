@@ -9,8 +9,13 @@ public enum Menu
     Exit=0,
     CreatedBook,
     ListBook,
+    DeleteBook,
+    UpdateBook,
+    SearchByName,
+    SearchBookISBN,
     CreatedUser,
     ListUsers,
     CreatedBorrwing,
-    ListBorrwings
+    ListBorrwings,
+    DeleteBorrwing
 }
