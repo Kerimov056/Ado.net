@@ -1,6 +1,6 @@
-CREATE DATABASE libaryDB
+CREATE DATABASE Libary
 
-USE libaryDB
+USE Libary
 
 CREATE TABLE Users(
 [user_id] INT IDENTITY PRIMARY KEY,
@@ -43,6 +43,6 @@ delete from Books where book_name='Riyaziyat'
 
 SELECT * FROM Books WHERE book_isbn='1r'
 
-
+SELECT * FROM Users
 
 Select * from Borrowings 

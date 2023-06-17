@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33122.133
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ado", "Ado\Ado.csproj", "{7B558BAB-EF9F-4A07-9821-0E68EC9B9BAA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ado", "Ado\Ado.csproj", "{7B558BAB-EF9F-4A07-9821-0E68EC9B9BAA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TabloCore", "TabloCore\TabloCore.csproj", "{965584F4-3B6D-4F5C-A4B7-97D9359AE6BA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookInfasturucture", "BookInfasturucture\BookInfasturucture.csproj", "{C01F9D88-780D-4DE5-8D52-9EE2EFEB7805}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{7B558BAB-EF9F-4A07-9821-0E68EC9B9BAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7B558BAB-EF9F-4A07-9821-0E68EC9B9BAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7B558BAB-EF9F-4A07-9821-0E68EC9B9BAA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{965584F4-3B6D-4F5C-A4B7-97D9359AE6BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{965584F4-3B6D-4F5C-A4B7-97D9359AE6BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{965584F4-3B6D-4F5C-A4B7-97D9359AE6BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{965584F4-3B6D-4F5C-A4B7-97D9359AE6BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C01F9D88-780D-4DE5-8D52-9EE2EFEB7805}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C01F9D88-780D-4DE5-8D52-9EE2EFEB7805}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C01F9D88-780D-4DE5-8D52-9EE2EFEB7805}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C01F9D88-780D-4DE5-8D52-9EE2EFEB7805}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

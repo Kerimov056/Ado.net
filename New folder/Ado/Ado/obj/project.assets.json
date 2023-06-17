@@ -146,6 +146,30 @@
             "rid": "win"
           }
         }
+      },
+      "BookInfasturucture/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "System.Data.SqlClient": "4.8.5",
+          "TabloCore": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/BookInfasturucture.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BookInfasturucture.dll": {}
+        }
+      },
+      "TabloCore/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/TabloCore.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/TabloCore.dll": {}
+        }
       }
     }
   },
@@ -462,27 +486,38 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
+    },
+    "BookInfasturucture/1.0.0": {
+      "type": "project",
+      "path": "../BookInfasturucture/BookInfasturucture.csproj",
+      "msbuildProject": "../BookInfasturucture/BookInfasturucture.csproj"
+    },
+    "TabloCore/1.0.0": {
+      "type": "project",
+      "path": "../TabloCore/TabloCore.csproj",
+      "msbuildProject": "../TabloCore/TabloCore.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "BookInfasturucture >= 1.0.0",
       "System.Data.SqlClient >= 4.8.5"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ulvisk\\.nuget\\packages\\": {}
+    "C:\\Users\\Legion\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ulvisk\\Desktop\\Ado.net\\New folder\\Ado\\Ado\\Ado.csproj",
+      "projectUniqueName": "D:\\SQL\\Ado.net\\New folder\\Ado\\Ado\\Ado.csproj",
       "projectName": "Ado",
-      "projectPath": "C:\\Users\\ulvisk\\Desktop\\Ado.net\\New folder\\Ado\\Ado\\Ado.csproj",
-      "packagesPath": "C:\\Users\\ulvisk\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ulvisk\\Desktop\\Ado.net\\New folder\\Ado\\Ado\\obj\\",
+      "projectPath": "D:\\SQL\\Ado.net\\New folder\\Ado\\Ado\\Ado.csproj",
+      "packagesPath": "C:\\Users\\Legion\\.nuget\\packages\\",
+      "outputPath": "D:\\SQL\\Ado.net\\New folder\\Ado\\Ado\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\ulvisk\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Legion\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -495,7 +530,11 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "D:\\SQL\\Ado.net\\New folder\\Ado\\BookInfasturucture\\BookInfasturucture.csproj": {
+              "projectPath": "D:\\SQL\\Ado.net\\New folder\\Ado\\BookInfasturucture\\BookInfasturucture.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
@@ -529,7 +568,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.103\\RuntimeIdentifierGraph.json"
       }
     }
   }

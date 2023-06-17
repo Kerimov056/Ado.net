@@ -1,0 +1,15 @@
+D:\SQL\Ado.net\New folder\Ado\BookInfasturucture\bin\Debug\net6.0\BookInfasturucture.deps.json
+D:\SQL\Ado.net\New folder\Ado\BookInfasturucture\bin\Debug\net6.0\BookInfasturucture.dll
+D:\SQL\Ado.net\New folder\Ado\BookInfasturucture\bin\Debug\net6.0\BookInfasturucture.pdb
+D:\SQL\Ado.net\New folder\Ado\BookInfasturucture\obj\Debug\net6.0\BookInfasturucture.csproj.AssemblyReference.cache
+D:\SQL\Ado.net\New folder\Ado\BookInfasturucture\obj\Debug\net6.0\BookInfasturucture.GeneratedMSBuildEditorConfig.editorconfig
+D:\SQL\Ado.net\New folder\Ado\BookInfasturucture\obj\Debug\net6.0\BookInfasturucture.AssemblyInfoInputs.cache
+D:\SQL\Ado.net\New folder\Ado\BookInfasturucture\obj\Debug\net6.0\BookInfasturucture.AssemblyInfo.cs
+D:\SQL\Ado.net\New folder\Ado\BookInfasturucture\obj\Debug\net6.0\BookInfasturucture.csproj.CoreCompileInputs.cache
+D:\SQL\Ado.net\New folder\Ado\BookInfasturucture\obj\Debug\net6.0\BookInfasturucture.dll
+D:\SQL\Ado.net\New folder\Ado\BookInfasturucture\obj\Debug\net6.0\refint\BookInfasturucture.dll
+D:\SQL\Ado.net\New folder\Ado\BookInfasturucture\obj\Debug\net6.0\BookInfasturucture.pdb
+D:\SQL\Ado.net\New folder\Ado\BookInfasturucture\obj\Debug\net6.0\ref\BookInfasturucture.dll
+D:\SQL\Ado.net\New folder\Ado\BookInfasturucture\bin\Debug\net6.0\TabloCore.dll
+D:\SQL\Ado.net\New folder\Ado\BookInfasturucture\bin\Debug\net6.0\TabloCore.pdb
+D:\SQL\Ado.net\New folder\Ado\BookInfasturucture\obj\Debug\net6.0\BookInfasturucture.csproj.CopyComplete

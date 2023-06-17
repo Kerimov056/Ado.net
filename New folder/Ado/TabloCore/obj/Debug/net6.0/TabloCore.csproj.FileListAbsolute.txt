@@ -1,0 +1,12 @@
+D:\SQL\Ado.net\New folder\Ado\TabloCore\bin\Debug\net6.0\TabloCore.deps.json
+D:\SQL\Ado.net\New folder\Ado\TabloCore\bin\Debug\net6.0\TabloCore.dll
+D:\SQL\Ado.net\New folder\Ado\TabloCore\bin\Debug\net6.0\TabloCore.pdb
+D:\SQL\Ado.net\New folder\Ado\TabloCore\obj\Debug\net6.0\TabloCore.csproj.AssemblyReference.cache
+D:\SQL\Ado.net\New folder\Ado\TabloCore\obj\Debug\net6.0\TabloCore.GeneratedMSBuildEditorConfig.editorconfig
+D:\SQL\Ado.net\New folder\Ado\TabloCore\obj\Debug\net6.0\TabloCore.AssemblyInfoInputs.cache
+D:\SQL\Ado.net\New folder\Ado\TabloCore\obj\Debug\net6.0\TabloCore.AssemblyInfo.cs
+D:\SQL\Ado.net\New folder\Ado\TabloCore\obj\Debug\net6.0\TabloCore.csproj.CoreCompileInputs.cache
+D:\SQL\Ado.net\New folder\Ado\TabloCore\obj\Debug\net6.0\TabloCore.dll
+D:\SQL\Ado.net\New folder\Ado\TabloCore\obj\Debug\net6.0\refint\TabloCore.dll
+D:\SQL\Ado.net\New folder\Ado\TabloCore\obj\Debug\net6.0\TabloCore.pdb
+D:\SQL\Ado.net\New folder\Ado\TabloCore\obj\Debug\net6.0\ref\TabloCore.dll
