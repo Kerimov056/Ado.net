@@ -12,7 +12,7 @@ public class BorrwingServis
     BookServis bookServis = new BookServis();
     public BorrwingServis()
     {
-        coonection = $"Server={name}; Database=Libary; Trusted_Connection=True;";
+        coonection = $"Server={name}; Database=Libary_adoNet; Trusted_Connection=True;";
     }
 
     string[] ISBNArray = new string[0];
@@ -48,7 +48,6 @@ public class BorrwingServis
 
         string book_name = "";
         string book_isbn = "";
-        string user_name = "";
 
         foreach (var item in books)
         {
@@ -74,6 +73,7 @@ public class BorrwingServis
             return;
         }
 
+        string user_name = "";
         foreach (var item in users)
         {
             if (item.Id == userID)

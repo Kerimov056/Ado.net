@@ -9,7 +9,7 @@ public class UsersServis
 
     public UsersServis()
     {
-        coonection = $"Server={name}; Database=Libary; Trusted_Connection=True;";
+        coonection = $"Server={name}; Database=Libary_adoNet; Trusted_Connection=True;";
     }
 
     string[] namesArray = new string[0];
