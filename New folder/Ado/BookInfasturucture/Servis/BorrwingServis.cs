@@ -23,8 +23,8 @@ public class BorrwingServis
         {
             try
             {
-                SqlCommand cmd = new SqlCommand(query, conn);
                 conn.Open();
+                SqlCommand cmd = new SqlCommand(query, conn);
                 SqlDataReader reader = cmd.ExecuteReader();
                 if (reader.HasRows)
                 {
