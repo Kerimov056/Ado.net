@@ -619,9 +619,9 @@ while (true)
 				Console.WriteLine("List Users");
 				usersServis.GetAllUsers();
 				break;
-			#endregion
-
-			case (int)Menu.CreatedBorrwing:
+            #endregion
+            #region Created Borrowing
+            case (int)Menu.CreatedBorrwing:
 				Console.WriteLine("Choose Book (ID):");
 				borrwingServis.GetAllBook();
 				string? BookID = Console.ReadLine();
@@ -632,8 +632,9 @@ while (true)
 					Console.WriteLine("Choose correctly");
 					goto case (int)Menu.CreatedBorrwing;
                 }
-				UserID:
-                Console.WriteLine("Choose User (ID):");
+			UserID:
+				Console.WriteLine("Choose User (ID):");
+				borrwingServis.GetAllUsers();
                 string? UserID = Console.ReadLine();
                 int user_id;
                 bool TryTOUserId = int.TryParse(UserID, out user_id);
@@ -668,8 +669,14 @@ while (true)
 					Console.WriteLine(ex.Message);
 				}
                 break;
-
-			default:
+            #endregion
+            #region List Borrwing
+            case (int)Menu.ListBorrwings:
+				Console.WriteLine("List Borrwings");
+				borrwingServis.GetBorrowings();
+				break;
+            #endregion
+            default:
 				Console.WriteLine("Select coreet ones from menu:");
 				break;
 		}
