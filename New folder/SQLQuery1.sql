@@ -27,6 +27,8 @@ CREATE TABLE Borrowings(
 [borrowing_date] date,
 [return_date] date,
 )
+ALTER TABLE Borrowings
+ADD [user_name] nvarchar(255)
 
 
 SELECT * FROM Users

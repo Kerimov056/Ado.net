@@ -30,7 +30,7 @@ public class BorrwingServis
                 {
                     while (reader.Read())
                     {
-                        Console.WriteLine($"ID: {reader[0]} BookID:{reader[1]} UserID: {reader[2]} BookName: {reader[3]} BookIsbn: {reader[4]} BorrowingDate: {reader[5]} ReturnDate: {reader[6]}");
+                        Console.WriteLine($"ID: {reader[0]} BookID:{reader[1]} UserID: {reader[2]} BookName: {reader[3]} BookIsbn:{reader[4]} BorrowingDate: {reader[5]} ReturnDate: {reader[6]} UserName: {reader[6]}");
                     }
                 }
                 else { Console.WriteLine("We don't have a Borrwing"); }
@@ -72,7 +72,16 @@ public class BorrwingServis
             return;
         }
 
-        var query = $"INSERT INTO Borrowings values('{bookID}','{userID}','{book_name}','{book_isbn}','{boorowing_date}','{return_date}')";
+        string user_name = "";
+        foreach (var item in users)
+        {
+            if (item.Id == userID)
+            {
+                user_name = item.Name;
+            }
+        }
+
+        var query = $"INSERT INTO Borrowings values('{bookID}','{userID}','{book_name}','{book_isbn}','{boorowing_date}','{return_date}','{user_name}')";
         using (SqlConnection conn = new SqlConnection(coonection))
         {
             try
