@@ -63,7 +63,7 @@ public class UsersServis
     public void SearchUserNumber(string number)
     {
         number.Trim();
-        string query = $"SELECT * FROM Users WHERE phone_number='{number}'";
+        string query = $"SELECT * FROM Users WHERE phone_number like '%{number}%'";
         using (SqlConnection conn = new SqlConnection(coonection))
         {
             try

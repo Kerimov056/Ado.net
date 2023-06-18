@@ -121,6 +121,25 @@ public class BorrwingServis
         }
     }
 
+    public void UpdateBorrowing(int ID,int book_id)
+    {
+        var query = $"UPDATE Users SET book_id='{book_id}' WHERE Borrowings='{ID}'";
+        using (SqlConnection conn = new SqlConnection(coonection))
+        {
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            conn.Close();
+        }
+    }
+
 
     public List <Borrwing> borrwings = new List <Borrwing>();
     public void BorrwingListAdd()
