@@ -93,9 +93,9 @@ public class BookServis
         }
     }
 
-    public void UpdateRowBook(string newName, int oldName)
+    public void UpdateRowBook(string newName, int book_id)
     {
-        var query = $"update Books set book_name='{newName}' where book_id='{oldName}'";
+        var query = $"update Books set book_name='{newName}' where book_id='{book_id}'";
         using (SqlConnection conn = new SqlConnection(coonection))
         {
             try

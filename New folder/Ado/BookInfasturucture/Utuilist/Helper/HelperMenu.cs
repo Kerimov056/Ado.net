@@ -20,5 +20,7 @@ public enum Menu
     SearchUserNumber,
     CreatedBorrwing,
     ListBorrwings,
-    DeleteBorrwing
+    DeleteBorrwing,
+    UpdateBorrowing,
+    SearchBorrowing
 }

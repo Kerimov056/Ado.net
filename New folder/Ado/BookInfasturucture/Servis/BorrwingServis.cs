@@ -44,7 +44,7 @@ public class BorrwingServis
             conn.Close();
         }
     }
-    public void BorrowBook(int bookID, int userID, string boorowing_date, string return_date) //borrowing
+    public void BorrowBook(int bookID, int userID, string boorowing_date, string return_date) //Set borrowing
     {
 
         string book_name = "";
@@ -123,7 +123,21 @@ public class BorrwingServis
 
     public void UpdateBorrowing(int ID,int book_id)
     {
-        var query = $"UPDATE Users SET book_id='{book_id}' WHERE Borrowings='{ID}'";
+
+        string book_name = "";
+        string book_isbn = "";
+
+        foreach (var item in books)
+        {
+            if (item.Id == book_id)
+            {
+                book_name = item.Name;
+                book_isbn = item.BookISBN;
+                break;
+            }
+        }
+
+        var query = $"UPDATE Borrowings SET book_id='{book_id}',book_name='{book_name}',book_isbn='{book_isbn}' WHERE Borrowings_id='{ID}'";
         using (SqlConnection conn = new SqlConnection(coonection))
         {
             try
@@ -140,6 +154,34 @@ public class BorrwingServis
         }
     }
 
+    public void SearchBorrowing(string user_name)
+    {
+        user_name.Trim();
+        string query = $"SELECT * FROM Borrowings WHERE user_name like '%{user_name}%'";
+        using (SqlConnection conn = new SqlConnection(coonection))
+        {
+            try
+            {
+                SqlCommand cmd = new SqlCommand(query, conn);
+                conn.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        Console.WriteLine($"ID: {reader[0]} \nBookID:{reader[1]} \nUserID: {reader[2]} \nUserName: {reader[3]} \nBookName:{reader[4]} \nBookISBN: {reader[5]} \nBorriwingName: {reader[6]} \nReturnDate: {reader[6]}");
+                        Console.WriteLine("----------------------------------------");
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            conn.Close();
+        }
+    }
 
     public List <Borrwing> borrwings = new List <Borrwing>();
     public void BorrwingListAdd()

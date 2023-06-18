@@ -31,4 +31,8 @@ CREATE TABLE Borrowings(
 
 
 DELETE FROM Borrowings  WHERE Borrowings_id=5
+
 SELECT * FROM Borrowings
+SELECT * FROM Books
+SELECT * FROM Users
+UPDATE Borrowings SET book_id=4,book_name=React  WHERE Borrowings_id=7

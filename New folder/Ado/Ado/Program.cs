@@ -32,7 +32,9 @@ while (true)
         "\n-----------------------" +
         "\n12 -> Created Borrwing" +
 		"\n13 -> List Borrwings" +
-		"\n14 -> Delete Borrwings");
+		"\n14 -> Delete Borrwings" +
+        "\n15 -> Update Borrowing" +
+        "\n16 -> Search Borrowing");
 	Console.WriteLine("-------------------------");
 
 	string? answer = Console.ReadLine();
@@ -411,12 +413,62 @@ while (true)
 					Console.WriteLine(ex.Message);
 				}
 				break;
-            #endregion
-            #region Update Borrwing
+			#endregion
+			#region Update Borrwing
+			case (int)Menu.UpdateBorrowing:
+                Console.WriteLine("Update Borrowing (ID):");
+                borrwingServis.GetBorrowings();
+                string? BorrwingIdd = Console.ReadLine();
+                int BorrIdd;
+                bool TryToBorrIDD = int.TryParse(BorrwingIdd, out BorrIdd);
+                if (!TryToBorrIDD)
+                {
+                    Console.WriteLine("Choose correctly");
+                    goto case (int)Menu.UpdateBorrowing;
+                }
+			BookID:
+				Console.WriteLine("Update Book (ID):");
+				borrwingServis.GetAllBook();
+                string? BorrwingBookIdd = Console.ReadLine();
+                int BorrBookIdd;
+                bool TryToBorrBookIDD = int.TryParse(BorrwingBookIdd, out BorrBookIdd);
+                if (!TryToBorrBookIDD)
+                {
+                    Console.WriteLine("Choose correctly");
+                    goto BookID;
+                }
+				try
+				{
+					borrwingServis.UpdateBorrowing(BorrIdd, BorrBookIdd);
+                    Console.WriteLine("Succesfully Update");
+                }
+				catch (Exception ex)
+				{
+					Console.WriteLine(ex.Message);
+				}
+                break;
+			#endregion
+			#region Search Borrowing
+			case (int)Menu.SearchBorrowing:
+				Console.WriteLine("Search Borrwing User_Nmae:");
+				string? user_namee = Console.ReadLine();
+				if (String.IsNullOrWhiteSpace(user_namee))
+				{
+					Console.WriteLine("Enter a correct User Name:");
+					goto case (int)Menu.SearchBorrowing;
+                }
+				try
+				{
+					borrwingServis.SearchBorrowing(user_namee);
+				}
+				catch (Exception ex)
+				{
+					Console.WriteLine(ex.Message);
+				}
+				break;
+			#endregion
 
-            #endregion
-
-            default:
+			default:
 				Console.WriteLine("Select coreet ones from menu:");
 				break;
 		}
