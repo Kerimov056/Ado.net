@@ -26,10 +26,13 @@ while (true)
 		"\n-----------------------" +
 		"\n7 -> Created User" +
 		"\n8 -> List Users" +
+        "\n9 -> Update Users" +
+        "\n10 -> Delete User" +
+        "\n11 -> Search User Number" +
         "\n-----------------------" +
-        "\n9 -> Created Borrwing" +
-		"\n10 -> List Borrwings" +
-		"\n11 -> Delete Borrwings");
+        "\n12 -> Created Borrwing" +
+		"\n13 -> List Borrwings" +
+		"\n14 -> Delete Borrwings");
 	Console.WriteLine("-------------------------");
 
 	string? answer = Console.ReadLine();

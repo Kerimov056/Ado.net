@@ -15,6 +15,9 @@ public enum Menu
     SearchBookISBN,
     CreatedUser,
     ListUsers,
+    UpdateUsers,
+    DeleteUser,
+    SearchUserNumber,
     CreatedBorrwing,
     ListBorrwings,
     DeleteBorrwing
