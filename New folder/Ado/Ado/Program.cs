@@ -14,6 +14,8 @@ BorrwingServis borrwingServis = new BorrwingServis();
 Console.WriteLine("Welcome");
 while (true)
 {
+	Start:
+
 	Console.WriteLine("-------------------------");
 	Console.WriteLine("0 -> Exit" +
 		"\n-----------------------" +
@@ -337,8 +339,13 @@ while (true)
             #endregion
             #region Created Borrowing
             case (int)Menu.CreatedBorrwing:
-				Console.WriteLine("Choose Book (ID):");
-				borrwingServis.GetAllBook();
+                borrwingServis.GetAllBook();
+                if (borrwingServis.isBook==true)
+				{
+                    Console.WriteLine("We don't have a book! \nYou must create a book first");
+					goto Start;
+                }
+                Console.WriteLine("Choose Book (ID):");
 				string? BookID = Console.ReadLine();
 				int book_id;
 				bool TryTOBookId = int.TryParse(BookID,out book_id);
@@ -348,8 +355,13 @@ while (true)
 					goto case (int)Menu.CreatedBorrwing;
                 }
 				UserID:
-				Console.WriteLine("Choose User (ID):");
 				borrwingServis.GetAllUsers();
+				if (borrwingServis.isUser==true)
+				{
+                    Console.WriteLine("We don't have a User! \nYou must create a User first");
+                    goto Start;
+                }
+				Console.WriteLine("Choose User (ID):");
                 string? UserID = Console.ReadLine();
                 int user_id;
                 bool TryTOUserId = int.TryParse(UserID, out user_id);
@@ -393,7 +405,7 @@ while (true)
 			#endregion
 			#region Delete Borrwing
 			case (int)Menu.DeleteBorrwing:
-				Console.WriteLine("Which Borrwing do you want to delete?");
+				Console.WriteLine("Which Borrwing do you want to delete (ID)?");
 				borrwingServis.GetBorrowings();
 				string? BorrwingId = Console.ReadLine();
 				int BorrId;

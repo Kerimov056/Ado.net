@@ -1,4 +1,5 @@
-﻿using System.Data.SqlClient;
+﻿using BookInfasturucture.Utuilist.Excepitons;
+using System.Data.SqlClient;
 using System.Net;
 using System.Text.Json.Nodes;
 using TabloCore.Entity;
@@ -261,6 +262,8 @@ public class BorrwingServis
 
     //----------------------BOOK----------------------------------
     public List<Book> books = new List<Book>();
+
+    public bool isBook = false;
     public void GetAllBook() //book
     {
         string query = "SELECT * FROM Books";
@@ -286,7 +289,11 @@ public class BorrwingServis
                          books.Add(bookbook);
                     }
                 }
-                else { Console.WriteLine("We don't have a book"); }
+                else 
+                {
+                    //throw new ThereIsNoBook("We don't have a book");
+                    isBook=true;
+                }
             }
             catch (Exception ex)
             {
@@ -299,6 +306,7 @@ public class BorrwingServis
     //----------------------USER---------------------------------
     public List<User> users = new List<User>();
 
+    public bool isUser = false;
     public void GetAllUsers()
     {
         string query = "SELECT * FROM Users";
@@ -326,7 +334,10 @@ public class BorrwingServis
                         users.Add(user);
                     }
                 }
-                else { Console.WriteLine("We don't have a User"); }
+                else 
+                {
+                    isUser=true;
+                }
             }
             catch (Exception ex)
             {
