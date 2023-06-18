@@ -151,6 +151,24 @@ while (true)
 					Console.WriteLine(ex.Message);
 				}
 				break;
+			#endregion
+			#region Search By Name
+			case (int)Menu.SearchByName:
+				Console.WriteLine("Search By Name:");
+				string? SearchByName = Console.ReadLine();
+				if (String.IsNullOrWhiteSpace(SearchByName))
+				{
+					Console.WriteLine("Enter a Correct name");
+				}
+				try
+				{
+					bookServis.SearchByName(SearchByName);
+				}
+				catch (Exception ex)
+				{
+					Console.WriteLine(ex.Message);
+				}
+				break;
             #endregion
             #region Created User
             case (int)Menu.CreatedUser:

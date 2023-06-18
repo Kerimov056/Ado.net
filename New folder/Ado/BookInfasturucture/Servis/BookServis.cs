@@ -67,6 +67,7 @@ public class BookServis
 
     public void SearchByName(string name)
     {
+        name.Trim();
         if (name.Length < 2) { Console.WriteLine("Enter more than 2 letter"); return; }
         string query = $"SELECT * FROM Books WHERE book_name like '%{name}%'";
         using (SqlConnection conn = new SqlConnection(coonection))
