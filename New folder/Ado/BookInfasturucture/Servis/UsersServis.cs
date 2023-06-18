@@ -1,4 +1,5 @@
 ﻿using System.Data.SqlClient;
+using TabloCore.Entity;
 
 namespace BookInfasturucture.Servis;
 
@@ -171,6 +172,43 @@ public class UsersServis
             conn.Close();
 
             namesArray = name_list.ToArray();
+        }
+    }
+
+
+
+    public List<User> users = new List<User>();
+
+    public void GetAllUsersADD()
+    {
+        string query = "SELECT * FROM Users";
+        using (SqlConnection conn = new SqlConnection(coonection))
+        {
+            try
+            {
+                SqlCommand cmd = new SqlCommand(query, conn);
+                conn.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        int user_id = (int)reader["user_id"];
+                        string name = (string)reader["name"];
+                        string surname = (string)reader["surname"];
+                        string phone_number = (string)reader["phone_number"];
+                        string mail_address = (string)reader["mail_address"];
+
+                        User user = new User(user_id, name, surname, phone_number, mail_address);
+                        users.Add(user);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            conn.Close();
         }
     }
 }

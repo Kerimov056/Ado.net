@@ -1,4 +1,5 @@
-﻿using BookInfasturucture.Servis;
+﻿using BookInfasturucture.DataBase;
+using BookInfasturucture.Servis;
 using BookInfasturucture.Utuilist.Excepitons;
 using BookInfasturucture.Utuilist.Helper;
 using System.Data.SqlClient;
@@ -15,7 +16,6 @@ public class BookServis
     {
         coonection = $"Server={name}; Database=Libary_adoNet; Trusted_Connection=True;";
     }
-
 
     public  string[] BookNameArray = new string[0];
     public void GetAllBook() //book
@@ -162,6 +162,43 @@ public class BookServis
     }
 
     //----------------------------------------------------
+
+    public List<Book> books = new List<Book>();
+
+    public void GetAllBookADD() //book
+    {
+        string query = "SELECT * FROM Books";
+        using (SqlConnection conn = new SqlConnection(coonection))
+        {
+            try
+            {
+                SqlCommand cmd = new SqlCommand(query, conn);
+                conn.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+
+                        int book_id = (int)reader["book_id"];
+                        string book_name = (string)reader["book_name"];
+                        int page_count = (int)reader["page_count"];
+                        string book_isbn = (string)reader["book_isbn"];
+
+                        Book bookbook = new Book(book_id, book_name, page_count, book_isbn);
+                        books.Add(bookbook);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            conn.Close();
+        }
+    }
+
+
     public void BookNameAdd()
     {
         var query = "SELECT * FROM Books";
