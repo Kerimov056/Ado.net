@@ -1,4 +1,5 @@
 ﻿using BookInfasturucture.Servis;
+using BookInfasturucture.Utuilist.Excepitons;
 using BookInfasturucture.Utuilist.Helper;
 using System.Data.SqlClient;
 using TabloCore.Entity;
@@ -92,9 +93,9 @@ public class BookServis
         }
     }
 
-    public void UpdateRowBook(string newName, string oldName)
+    public void UpdateRowBook(string newName, int oldName)
     {
-        var query = $"update Books set book_name='{newName}' where book_name='{oldName}'";
+        var query = $"update Books set book_name='{newName}' where book_id='{oldName}'";
         using (SqlConnection conn = new SqlConnection(coonection))
         {
             try
@@ -124,10 +125,9 @@ public class BookServis
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.ExecuteNonQuery();
             }
-            catch (Exception ex)
+            catch (ThereIsNoBook)
             {
-                Console.WriteLine("This book is currently with one of our customers");
-                return;
+                throw new ThereIsNoBook("This book is currently with one of our customers");
             }
             conn.Close();
         }

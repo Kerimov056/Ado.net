@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿namespace BookInfasturucture.Utuilist.Excepitons;
 
-namespace BookInfasturucture.Utuilist.Excepitons
+public class ThereIsNoBook: Exception
 {
-    internal class ThereIsNoBook
-    {
-    }
+	public ThereIsNoBook(string mesage) :base(mesage)
+	{
+
+	}
 }

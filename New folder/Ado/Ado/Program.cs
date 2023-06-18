@@ -119,6 +119,38 @@ while (true)
                     Console.WriteLine(ex.Message);
                 }
                 break;
+			#endregion
+			#region Update Book
+			case (int)Menu.UpdateBook:
+				Console.WriteLine("Enter Book ID:");
+				bookServis.GetAllBook();
+                string? BookkID = Console.ReadLine();
+                int bookk_id;
+                bool TryTOBookkId = int.TryParse(BookkID, out bookk_id);
+                if (!TryTOBookkId)
+                {
+                    Console.WriteLine("Choose correctly");
+                    goto case (int)Menu.UpdateBook;
+                }
+                Console.WriteLine("Enter New Book Name:");
+                NewBookNamee:
+                string? NewBookName = Console.ReadLine();
+				if (String.IsNullOrWhiteSpace(NewBookName))
+				{
+					Console.WriteLine("Choose correctly");
+					goto NewBookNamee;
+
+                }
+				try
+				{
+					bookServis.UpdateRowBook(NewBookName, bookk_id);
+					Console.WriteLine("Succesfully created");
+                }
+                catch (Exception ex)
+				{
+					Console.WriteLine(ex.Message);
+				}
+				break;
             #endregion
             #region Created User
             case (int)Menu.CreatedUser:
