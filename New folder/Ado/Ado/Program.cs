@@ -156,10 +156,17 @@ while (true)
 			case (int)Menu.SearchByName:
 				Console.WriteLine("Search By Name:");
 				string? SearchByName = Console.ReadLine();
-				if (String.IsNullOrWhiteSpace(SearchByName))
-				{
-					Console.WriteLine("Enter a Correct name");
+                if (SearchByName.Length < 2) 
+				{ 
+					Console.WriteLine("Enter more than 2 letter");
+					 goto case (int)Menu.SearchByName; 
 				}
+                if (String.IsNullOrWhiteSpace(SearchByName))
+				{
+					Console.WriteLine("Enter a Correct name: (Book)");
+					goto case (int)Menu.SearchByName;
+
+                }
 				try
 				{
 					bookServis.SearchByName(SearchByName);
@@ -169,6 +176,30 @@ while (true)
 					Console.WriteLine(ex.Message);
 				}
 				break;
+            #endregion
+            #region Search By ISBN
+            case (int)Menu.SearchBookISBN:
+                Console.WriteLine("Search By ISBN:");
+                string? SearchByISBN = Console.ReadLine();
+                if (SearchByISBN.Length < 2)
+                {
+                    Console.WriteLine("Enter more than 2 letter");
+                    goto case (int)Menu.SearchBookISBN;
+                }
+                if (String.IsNullOrWhiteSpace(SearchByISBN))
+                {
+                    Console.WriteLine("Enter a Correct ISBN: (Book)");
+					goto case (int)Menu.SearchBookISBN;
+                }
+                try
+                {
+                    bookServis.SearchBookISBN(SearchByISBN);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+                break;
             #endregion
             #region Created User
             case (int)Menu.CreatedUser:

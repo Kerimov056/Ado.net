@@ -68,7 +68,6 @@ public class BookServis
     public void SearchByName(string name)
     {
         name.Trim();
-        if (name.Length < 2) { Console.WriteLine("Enter more than 2 letter"); return; }
         string query = $"SELECT * FROM Books WHERE book_name like '%{name}%'";
         using (SqlConnection conn = new SqlConnection(coonection))
         {
@@ -136,13 +135,14 @@ public class BookServis
 
     public void SearchBookISBN(string isbn)
     {
-        string query = $"SELECT * FROM Books WHERE book_isbn='{isbn}'";
+        isbn.Trim();    
+        string query = $"SELECT * FROM Books WHERE book_isbn like '%{isbn}%'";
         using (SqlConnection conn = new SqlConnection(coonection))
         {
             try
             {
-                SqlCommand cmd = new SqlCommand(query, conn);
                 conn.Open();
+                SqlCommand cmd = new SqlCommand(query, conn);
                 SqlDataReader reader = cmd.ExecuteReader();
                 if (reader.HasRows)
                 {
