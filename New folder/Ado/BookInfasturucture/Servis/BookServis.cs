@@ -113,20 +113,22 @@ public class BookServis
         }
     }
 
-    public void DeleteRowBook(string deleteName)
+    public void DeleteRowBook(string deleteIsbn)
     {
-        var query = $"delete from Books where book_name='{deleteName}'";
+        deleteIsbn.Trim();
+        var query = $"delete from Books where book_isbn='{deleteIsbn}'";
         using (SqlConnection conn = new SqlConnection(coonection))
         {
             try
             {
-                SqlCommand cmd = new SqlCommand(query, conn);
                 conn.Open();
+                SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.ExecuteNonQuery();
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
+                Console.WriteLine("This book is currently with one of our customers!");
+                return;
             }
             conn.Close();
         }

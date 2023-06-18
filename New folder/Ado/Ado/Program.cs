@@ -5,13 +5,21 @@ using System.Data.SqlClient;
 
 
 
-
 BookServis bookServis = new BookServis();
 UsersServis usersServis = new UsersServis();
 BorrwingServis borrwingServis = new BorrwingServis();
 
+borrwingServis.BorrwingListAdd();
+foreach (var item in borrwingServis.borrwings)
+{
+	//if (item.BookISBN == BookISBN)
+	//{
+	Console.WriteLine(item.BookISBN);
+        //Console.WriteLine("This book is currently with one of our customers");
+        //return;
+}
 
-
+/*
 Console.WriteLine("Welcome");
 while (true)
 {
@@ -93,17 +101,26 @@ while (true)
             #endregion
             #region Delete Book
             case (int)Menu.DeleteBook:
-                Console.WriteLine("Which book do you want to delete?");
+                Console.WriteLine("Which book do you want to delete (Book_ISBN)?");
                 bookServis.GetAllBook();
-                string? BookName = Console.ReadLine();
-                if (String.IsNullOrWhiteSpace(BookName))
+                string? BookISBN = Console.ReadLine();
+                if (String.IsNullOrWhiteSpace(BookISBN))
                 {
                     Console.WriteLine("Enter a Correct name");
-                    goto case (int)Menu.DeleteBook;
+                    goto case (int)Menu.DeleteBook;  //alinmayib a  yarimciq qalib
                 }
+				borrwingServis.BorrwingListAdd();
+                foreach (var item in borrwingServis.borrwings)
+				{
+					if (item.BookISBN == BookISBN)
+					{
+						Console.WriteLine("This book is currently with one of our customers");
+						return;
+					}
+				}
                 try
                 {
-                    bookServis.DeleteRowBook(BookName);
+                    bookServis.DeleteRowBook(BookISBN);
                     Console.WriteLine("Succesfully created");
                 }
                 catch (Exception ex)
@@ -219,8 +236,30 @@ while (true)
 				Console.WriteLine("List Borrwings");
 				borrwingServis.GetBorrowings();
 				break;
+			#endregion
+			#region Delete Borrwing
+			case (int)Menu.DeleteBorrwing:
+				Console.WriteLine("Which Borrwing do you want to delete?");
+				borrwingServis.GetBorrowings();
+				string? BorrwingId = Console.ReadLine();
+				int BorrId;
+				bool TryToBorrID = int.TryParse(BorrwingId, out BorrId);
+				if (!TryToBorrID)
+				{
+					Console.WriteLine("Choose correctly");
+					goto case (int)Menu.DeleteBorrwing;
+                }
+				try
+				{
+					borrwingServis.DeleteBorrwing(BorrId);
+					Console.WriteLine("Succesfully created");
+				}
+				catch (Exception ex)
+				{
+					Console.WriteLine(ex.Message);
+				}
+				break;
             #endregion
-			
 
             default:
 				Console.WriteLine("Select coreet ones from menu:");
@@ -233,3 +272,6 @@ while (true)
 	}
 	Console.WriteLine("_______________________");
 }
+
+
+*/

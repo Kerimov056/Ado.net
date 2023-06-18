@@ -1,4 +1,5 @@
 ﻿using System.Data.SqlClient;
+using System.Net;
 using System.Text.Json.Nodes;
 using TabloCore.Entity;
 
@@ -100,6 +101,62 @@ public class BorrwingServis
         }
     }
 
+
+    public void DeleteBorrwing(int Id)
+    {
+        var query = $"DELETE FROM Borrowings  WHERE Borrowings_id='{Id}'";
+        using (SqlConnection conn = new SqlConnection(coonection))
+        {
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            conn.Close();   
+        }
+    }
+
+
+    public List <Borrwing> borrwings = new List <Borrwing>();
+    public void BorrwingListAdd()
+    {
+        string query = "SELECT * FROM Borrowings";
+        using (SqlConnection conn = new SqlConnection(coonection))
+        {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(query, conn);
+                SqlDataReader reader = cmd.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+
+                        int book_id = (int)reader["book_id"];
+                        int user_id = (int)reader["user_id"];
+                        string user_name = (string)reader["user_name"];
+                        string book_name = (string)reader["book_name"];
+                        string book_isbn = (string)reader["book_isbn"];
+                        DateTime borrowing_date = (DateTime)reader["borrowing_date"];
+                        DateTime return_date = (DateTime)reader["return_date"];
+
+
+                        Borrwing borrwing = new Borrwing(book_id, user_id, user_name, book_name, book_isbn, borrowing_date, return_date);
+                        borrwings.Add(borrwing);
+                    }
+                }
+            conn.Close();
+        }
+    }
+
+
+
+
+    //----------------isbnAdd-------------------------
     public void ISBNAdd()
     {
         var query = "SELECT * FROM Borrowings";
