@@ -62,6 +62,7 @@ public class UsersServis
 
     public void SearchUserNumber(string number)
     {
+        number.Trim();
         string query = $"SELECT * FROM Users WHERE phone_number='{number}'";
         using (SqlConnection conn = new SqlConnection(coonection))
         {
@@ -123,9 +124,9 @@ public class UsersServis
         }
     }
 
-    public void DeleteRowUser(int UserID)
+    public void DeleteRowUser(string UserName)
     {
-        var query = $"delete from Users where user_id='{UserID}'";
+        var query = $"delete from Users where name='{UserName}'";
         using (SqlConnection conn = new SqlConnection(coonection))
         {
             try

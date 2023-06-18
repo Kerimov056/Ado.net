@@ -286,15 +286,46 @@ while (true)
 			#endregion
 			#region Delete User
 			case (int)Menu.DeleteUser:
-				Console.WriteLine("Enter User (ID):");
+				Console.WriteLine("Enter User (Name):");
 				usersServis.GetAllUsers();
-				string? UserIDD = Console.ReadLine();
-				int user_idd;
-				bool TryToUserID = int.TryParse(UserIDD, out user_idd);
+				string? UserName = Console.ReadLine();
+				borrwingServis.BorrwingListAdd();
+				foreach (var item in borrwingServis.borrwings)
+				{
+					if (item.UserName == UserName)
+					{
+						Console.WriteLine("You cannot delete this user:");
+						goto case (int)Menu.DeleteUser;
+					}
+				}
+				if (String.IsNullOrWhiteSpace(UserName))
+				{
+					Console.WriteLine("Enter a Correct Name:");
+					goto case (int)Menu.DeleteUser;
+                }
 				try
 				{
-					usersServis.DeleteRowUser(user_idd);
+					usersServis.DeleteRowUser(UserName);
 					Console.WriteLine("Succesfully");
+				}
+				catch (Exception ex)
+				{
+					Console.WriteLine(ex.Message);
+				}
+				break;
+			#endregion
+			#region Search User Number
+			case (int)Menu.SearchUserNumber:
+				Console.WriteLine("Search User Number:");
+				string? UserNumber = Console.ReadLine();
+				if (String.IsNullOrWhiteSpace(UserNumber))
+				{
+					Console.WriteLine("Enter a Corecct Number:");
+					goto case (int)Menu.SearchUserNumber;
+				}
+				try
+				{
+					usersServis.SearchUserNumber(UserNumber);
 				}
 				catch (Exception ex)
 				{
