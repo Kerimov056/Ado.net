@@ -9,17 +9,8 @@ BookServis bookServis = new BookServis();
 UsersServis usersServis = new UsersServis();
 BorrwingServis borrwingServis = new BorrwingServis();
 
-borrwingServis.BorrwingListAdd();
-foreach (var item in borrwingServis.borrwings)
-{
-	//if (item.BookISBN == BookISBN)
-	//{
-	Console.WriteLine(item.BookISBN);
-        //Console.WriteLine("This book is currently with one of our customers");
-        //return;
-}
 
-/*
+
 Console.WriteLine("Welcome");
 while (true)
 {
@@ -106,8 +97,8 @@ while (true)
                 string? BookISBN = Console.ReadLine();
                 if (String.IsNullOrWhiteSpace(BookISBN))
                 {
-                    Console.WriteLine("Enter a Correct name");
-                    goto case (int)Menu.DeleteBook;  //alinmayib a  yarimciq qalib
+                    Console.WriteLine("Enter a Correct sssname");
+                    goto case (int)Menu.DeleteBook;  
                 }
 				borrwingServis.BorrwingListAdd();
                 foreach (var item in borrwingServis.borrwings)
@@ -272,6 +263,3 @@ while (true)
 	}
 	Console.WriteLine("_______________________");
 }
-
-
-*/

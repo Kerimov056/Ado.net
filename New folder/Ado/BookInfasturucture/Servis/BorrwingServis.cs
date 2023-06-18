@@ -128,6 +128,8 @@ public class BorrwingServis
         string query = "SELECT * FROM Borrowings";
         using (SqlConnection conn = new SqlConnection(coonection))
         {
+            try
+            {
                 conn.Open();
                 SqlCommand cmd = new SqlCommand(query, conn);
                 SqlDataReader reader = cmd.ExecuteReader();
@@ -135,7 +137,7 @@ public class BorrwingServis
                 {
                     while (reader.Read())
                     {
-
+                        int id = Convert.ToInt32(reader["Borrowings_id"]);
                         int book_id = (int)reader["book_id"];
                         int user_id = (int)reader["user_id"];
                         string user_name = (string)reader["user_name"];
@@ -145,10 +147,16 @@ public class BorrwingServis
                         DateTime return_date = (DateTime)reader["return_date"];
 
 
-                        Borrwing borrwing = new Borrwing(book_id, user_id, user_name, book_name, book_isbn, borrowing_date, return_date);
+                        Borrwing borrwing = new Borrwing(id, book_id, user_id, user_name, book_name, book_isbn, borrowing_date, return_date);
                         borrwings.Add(borrwing);
                     }
                 }
+                else { Console.WriteLine("We don't have a Borrwing"); }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
             conn.Close();
         }
     }

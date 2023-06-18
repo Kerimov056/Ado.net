@@ -30,3 +30,5 @@ CREATE TABLE Borrowings(
 
 
 
+DELETE FROM Borrowings  WHERE Borrowings_id=5
+SELECT * FROM Borrowings

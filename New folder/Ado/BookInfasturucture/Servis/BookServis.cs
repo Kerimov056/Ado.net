@@ -15,7 +15,6 @@ public class BookServis
         coonection = $"Server={name}; Database=Libary_adoNet; Trusted_Connection=True;";
     }
 
-    //List<Book> books = new List<Book>();
 
     public  string[] BookNameArray = new string[0];
     public void GetAllBook() //book
@@ -127,7 +126,7 @@ public class BookServis
             }
             catch (Exception ex)
             {
-                Console.WriteLine("This book is currently with one of our customers!");
+                Console.WriteLine("This book is currently with one of our customers");
                 return;
             }
             conn.Close();

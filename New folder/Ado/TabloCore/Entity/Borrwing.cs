@@ -19,26 +19,27 @@ public class Borrwing
     public DateTime BorrowingDate { get; set; }
     public DateTime ReturnDate { get; set; }
 
-    public Borrwing(int _id, int _bookId, int _userId, string _UserName, string _bookName, string _bookISBN, DateTime _borrowDate, DateTime _returnDate)
+    public Borrwing(int _id,int book_id, int user_id, string user_name, string book_name, string book_isbn, DateTime borrowing_date, DateTime return_date)
     {
-        Id = _id;
-        BookID = _bookId;
-        UserID = _userId;
-        UserName = _UserName;
-        BookName = _bookName;
-        BookISBN = _bookISBN;
-        BorrowingDate = _borrowDate;
-        ReturnDate = _returnDate;
+        Id= _id;
+        BookID= book_id;
+        UserID= user_id;
+        UserName= user_name;
+        BookName= book_name;
+        BookISBN= book_isbn;
+        BorrowingDate= borrowing_date;
+        ReturnDate= return_date;
     }
 
-    public Borrwing(int book_id, int user_id, string user_name, string book_name, string book_isbn, DateTime borrowing_date, DateTime return_date)
-    {
-        this.book_id = book_id;
-        this.user_id = user_id;
-        this.user_name = user_name;
-        this.book_name = book_name;
-        this.book_isbn = book_isbn;
-        this.borrowing_date = borrowing_date;
-        this.return_date = return_date;
-    }
+    //public Borrwing(int book_id, int user_id, string user_name, string book_name, string book_isbn, DateTime borrowing_date, DateTime return_date)
+    //{
+    //    this.book_id = book_id;
+    //    this.user_id = user_id;
+    //    this.user_name = user_name;
+    //    this.book_name = book_name;
+    //    this.book_isbn = book_isbn;
+    //    this.borrowing_date = borrowing_date;
+    //    this.return_date = return_date;
+    //}
+
 }
