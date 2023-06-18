@@ -123,9 +123,9 @@ public class UsersServis
         }
     }
 
-    public void DeleteRowUser(string deleteName)
+    public void DeleteRowUser(int UserID)
     {
-        var query = $"delete from Users where name='{deleteName}'";
+        var query = $"delete from Users where user_id='{UserID}'";
         using (SqlConnection conn = new SqlConnection(coonection))
         {
             try

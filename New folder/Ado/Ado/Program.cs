@@ -283,6 +283,24 @@ while (true)
 					Console.WriteLine(ex.Message);
 				}
 				break;
+			#endregion
+			#region Delete User
+			case (int)Menu.DeleteUser:
+				Console.WriteLine("Enter User (ID):");
+				usersServis.GetAllUsers();
+				string? UserIDD = Console.ReadLine();
+				int user_idd;
+				bool TryToUserID = int.TryParse(UserIDD, out user_idd);
+				try
+				{
+					usersServis.DeleteRowUser(user_idd);
+					Console.WriteLine("Succesfully");
+				}
+				catch (Exception ex)
+				{
+					Console.WriteLine(ex.Message);
+				}
+				break;
             #endregion
             #region Created Borrowing
             case (int)Menu.CreatedBorrwing:
