@@ -255,6 +255,34 @@ while (true)
 				Console.WriteLine("List Users");
 				usersServis.GetAllUsers();
 				break;
+			#endregion
+			#region Update User
+			case (int)Menu.UpdateUsers:
+                Console.WriteLine("Enter a Old Name:");
+                string? OldName = Console.ReadLine();
+                if (String.IsNullOrWhiteSpace(OldName))
+                {
+                    Console.WriteLine("Enter a Coorect Old Name:");
+                    goto case (int)Menu.UpdateUsers;
+                }
+				NewName:
+                Console.WriteLine("Enter a New Name:");
+				string? NewName = Console.ReadLine();
+				if (String.IsNullOrWhiteSpace(NewName))
+				{
+					Console.WriteLine("Enter a Coorect New Name:");
+					goto NewName;
+				}
+				try
+				{
+					usersServis.UpdateRowUsers(OldName, NewName);
+					Console.WriteLine("Succesfully created");
+				}
+				catch (Exception ex)
+				{
+					Console.WriteLine(ex.Message);
+				}
+				break;
             #endregion
             #region Created Borrowing
             case (int)Menu.CreatedBorrwing:

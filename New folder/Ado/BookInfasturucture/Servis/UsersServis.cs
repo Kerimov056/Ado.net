@@ -87,7 +87,7 @@ public class UsersServis
         }
     }
 
-    public void UpdateRowUsers(string new_name, string old_name)
+    public void UpdateRowUsers(string old_name,string new_name)
     {
         bool userFound = false;
 
@@ -100,7 +100,7 @@ public class UsersServis
             }
         }
 
-        if (!userFound)
+        if (userFound)
         {
             Console.WriteLine("No such user found");
             return;
@@ -111,14 +111,15 @@ public class UsersServis
         {
             try
             {
-                SqlCommand cmd = new SqlCommand(query, conn);
                 conn.Open();
+                SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.ExecuteNonQuery();
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
             }
+            conn.Close();
         }
     }
 
