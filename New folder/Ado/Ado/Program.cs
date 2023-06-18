@@ -403,6 +403,9 @@ Start:
                     if (item.BookID == book_id)
                     {
                         Console.WriteLine("This book is currently not with us, but with another client.");
+                        DateTime Today = DateTime.Today;
+                        TimeSpan fark = item.ReturnDate - Today;  //tarih
+                        Console.WriteLine($"You can get the book after {fark} days");
                         goto case (int)Menu.CreatedBorrwing;
 
                     }
