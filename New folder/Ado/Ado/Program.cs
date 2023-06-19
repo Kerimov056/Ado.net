@@ -2,8 +2,7 @@
 using BookInfasturucture.Servis;
 using BookInfasturucture.Utuilist.Helper;
 using System.Data.SqlClient;
-
-
+using System.Globalization;
 
 BookServis bookServis = new BookServis();
 UsersServis usersServis = new UsersServis();
@@ -427,24 +426,53 @@ Start:
                     goto UserID;
                 }
             takee:
-                Console.WriteLine("Woodc Acquisition Date");
-                string? take = Console.ReadLine();
-                if (String.IsNullOrWhiteSpace(take))
+                //Console.WriteLine("Woodc Acquisition Date");
+                Console.WriteLine("Tarih girin (yyyy-MM-dd formatında):");
+                string tarihInput = Console.ReadLine();
+
+                DateTime tarih;
+                bool tarihGecerli = DateTime.TryParseExact(tarihInput, "yyyy-MM-dd", CultureInfo.InvariantCulture, DateTimeStyles.None, out tarih);
+                if (tarihGecerli)
                 {
-                    Console.WriteLine("Choose correctly");
-                    goto takee;
+                    string formatliTarih = tarih.ToString("yyyy-MM-dd");
+                    Console.WriteLine("Formatlı tarih: " + formatliTarih);
                 }
+                else
+                {
+                    Console.WriteLine("Geçersiz tarih formatı!");
+                }
+                //----------------------------------------------
+                Console.WriteLine("Tarih girin (yyyy-MM-dd formatında):");
+                string tarihInput2 = Console.ReadLine();
+
+                DateTime tarih2;
+                bool tarihGecerli2 = DateTime.TryParseExact(tarihInput, "yyyy-MM-dd", CultureInfo.InvariantCulture, DateTimeStyles.None, out tarih2);
+                if (tarihGecerli2)
+                {
+                    string formatliTarih2 = tarih2.ToString("yyyy-MM-dd");
+                    Console.WriteLine("Formatlı tarih: " + formatliTarih2);
+                }
+                else
+                {
+                    Console.WriteLine("Geçersiz tarih formatı!");
+                }
+            //string? take = Console.ReadLine();
+            //if (String.IsNullOrWhiteSpace(formatliTarih))
+            //{
+            //    Console.WriteLine("Choose correctly");
+            //    goto takee;
+            //}
             ToGive:
-                Console.WriteLine("Return Date");
-                string? To_give = Console.ReadLine();
-                if (String.IsNullOrWhiteSpace(To_give))
-                {
-                    Console.WriteLine("Choose correctly");
-                    goto ToGive;
-                }
+                //Console.WriteLine("Return Date");
+                //string? To_give = Console.ReadLine();
+                //if (String.IsNullOrWhiteSpace(To_give))
+                //{
+                //    Console.WriteLine("Choose correctly");
+                //    goto ToGive;
+                //}
                 try
                 {
-                    borrwingServis.BorrowBook(book_id, user_id, take, To_give);
+                    borrwingServis.BorrowBook(book_id, user_id, tarih, tarih2);
                     Console.WriteLine("Succesfully created");
                 }
                 catch (Exception ex)

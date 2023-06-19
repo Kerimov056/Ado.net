@@ -45,7 +45,7 @@ public class BorrwingServis
             conn.Close();
         }
     }
-    public void BorrowBook(int bookID, int userID, string boorowing_date, string return_date) //Set borrowing
+    public void BorrowBook(int bookID, int userID, DateTime boorowing_date, DateTime return_date) //Set borrowing
     {
 
         string book_name = "";
